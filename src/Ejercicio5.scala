@@ -37,8 +37,6 @@ object Ejercicio5 {
       for (j <- lista2.indices)
         if(lista1(e).equals(lista2(j))) palabrasEnAmbasListas += lista2(j)
 
-    eliminarRepetidas(palabrasEnAmbasListas)
-
     palabrasEnAmbasListas
   }
 
@@ -50,8 +48,6 @@ object Ejercicio5 {
       for (j <- lista2.indices) if (lista1(e).equals(lista2(j))) coincidencias += 1
       if (coincidencias == 0) palabrasDeLista1QueNoEstanEnLista2 += lista1(e)
     }
-
-    eliminarRepetidas(palabrasDeLista1QueNoEstanEnLista2)
 
     palabrasDeLista1QueNoEstanEnLista2
   }
@@ -65,8 +61,6 @@ object Ejercicio5 {
       if (coincidencias == 0) palabrasDeLista2QueNoEstanEnLista1 += lista2(e)
     }
 
-    eliminarRepetidas(palabrasDeLista2QueNoEstanEnLista1)
-
     palabrasDeLista2QueNoEstanEnLista1
   }
 
@@ -74,11 +68,13 @@ object Ejercicio5 {
     print("Palabras de la lista 1, ")
     val palabras1 = new ListBuffer[String]()
     llenarLista(palabras1)
+    eliminarRepetidas(palabras1)
 
     println()
     print("Palabras de la lista 2, ")
     val palabras2 = new ListBuffer[String]()
     llenarLista(palabras2)
+    eliminarRepetidas(palabras2)
 
     println("\nPalabras de la Lista 1")
     mostrarLista(palabras1)
@@ -96,6 +92,7 @@ object Ejercicio5 {
     mostrarLista(listaEnL2)
     println("\nUnion de las dos listas anteriores")
     mostrarLista(listaEnL1 ++ listaEnL2)
+
 
   }
 }
