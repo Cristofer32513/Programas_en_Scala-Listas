@@ -92,7 +92,5 @@ object Ejercicio5 {
     mostrarLista(listaEnL2)
     println("\nUnion de las dos listas anteriores")
     mostrarLista(listaEnL1 ++ listaEnL2)
-
-
   }
 }
