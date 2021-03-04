@@ -14,17 +14,15 @@ object Ejercicio2 {
   }
 
   def palabraABuscar() : String = {
-    println("\n¿Que palabra queire buscar en la lista de palabras?")
+    println("\n¿Que palabra quiere buscar en la lista de palabras?")
     val palabra = readLine()
 
     palabra
   }
 
   def palabraAInsertar() : String = {
-    println("\n¿Que palabra queire insertar en las coincidencias de la lista de palabras?")
-    val palabra = readLine()
-
-    palabra
+    println("\n¿Que palabra quiere insertar en las coincidencias de la lista de palabras?")
+    readLine()
   }
 
   def mostrarLista(lista:ListBuffer[String]) : Unit = {
@@ -33,11 +31,16 @@ object Ejercicio2 {
     println(" ]")
   }
 
-  def actualizarLista(lista:ListBuffer[String], palabraABuscar:String, palabraAInsertar:String) : Unit = {
-    println("\nLista original")
-    mostrarLista(lista)
+  def buscarPalabra(lista:ListBuffer[String], palabra:String) : Int = {
+    var cantidadCoincidencias = 0
 
-    for (e <- lista.indices) if(lista(e).equals(palabraABuscar)) lista(e) = palabraAInsertar
+    for (e <- lista) if(e.equals(palabra)) cantidadCoincidencias += 1
+
+    cantidadCoincidencias
+  }
+
+  def actualizarLista(lista:ListBuffer[String], palabraABuscar:String, palabraAInsertar:String) : Unit = {
+    for (e <- lista.indices) if (lista(e).equals(palabraABuscar)) lista(e) = palabraAInsertar
 
     println("\nLista modificada")
     mostrarLista(lista)
@@ -46,6 +49,11 @@ object Ejercicio2 {
   def main(args: Array[String]): Unit = {
     val palabras = new ListBuffer[String]()
     llenarLista(palabras)
-    actualizarLista(palabras, palabraABuscar(), palabraAInsertar())
+    val palabraAEncontrar = palabraABuscar()
+
+    println("\nLista original")
+    mostrarLista(palabras)
+    if (buscarPalabra(palabras, palabraAEncontrar) > 0) actualizarLista(palabras, palabraAEncontrar, palabraAInsertar())
+    else println("\nNo se encontraron coincidencias")
   }
 }

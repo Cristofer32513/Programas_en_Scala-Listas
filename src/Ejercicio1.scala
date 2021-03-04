@@ -14,10 +14,8 @@ object Ejercicio1 {
   }
 
   def palabraABuscar() : String = {
-    println("\n¿Que palabra queire buscar en la lista de palabras?")
-    val palabra = readLine()
-
-    palabra
+    println("\n¿Que palabra quiere buscar en la lista de palabras?")
+    readLine()
   }
 
   def mostrarLista(lista:ListBuffer[String]) : Unit = {
@@ -29,7 +27,8 @@ object Ejercicio1 {
 
   def buscarPalabra(lista:ListBuffer[String], palabra:String) : Int = {
     var cantidadCoincidencias = 0
-    for (e <- lista) if(e.equals(palabra)) cantidadCoincidencias+=1
+
+    for (e <- lista) if(e.equals(palabra)) cantidadCoincidencias += 1
     mostrarLista(lista)
 
     cantidadCoincidencias
@@ -38,6 +37,7 @@ object Ejercicio1 {
   def main(args: Array[String]): Unit = {
     val palabras = new ListBuffer[String]()
     llenarLista(palabras)
+
     println("Se encontraron " + buscarPalabra(palabras, palabraABuscar()) + " coincidencias en la lista.")
   }
 }

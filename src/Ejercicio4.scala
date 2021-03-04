@@ -19,6 +19,15 @@ object Ejercicio4 {
     println(" ]")
   }
 
+  def buscarPalabras(lista1:ListBuffer[String], lista2:ListBuffer[String]) : Int = {
+    var conincidencias = 0
+    for (e <- lista2.indices)
+      for (j <- lista1.indices)
+        if(lista1(j).equals(lista2(e))) conincidencias += 1
+
+    conincidencias
+  }
+
   def actualizarLista(lista1:ListBuffer[String], lista2:ListBuffer[String]) : Unit = {
     for (e <- lista2.indices) {
       for (j <- lista1.indices) {
@@ -30,7 +39,7 @@ object Ejercicio4 {
       }
     }
 
-    println("\nLista actualizada")
+    println("\nLista 1 actualizada")
     mostrarLista(lista1)
   }
 
@@ -44,9 +53,12 @@ object Ejercicio4 {
     val palabras2 = new ListBuffer[String]()
     llenarLista(palabras2)
 
-    println("\nListas originales")
+    println("\nLista 1 original")
     mostrarLista(palabras1)
+    println("\nLista de palabras a borrar en la lista 1")
     mostrarLista(palabras2)
-    actualizarLista(palabras1, palabras2)
+
+    if (buscarPalabras(palabras1, palabras2) > 0) actualizarLista(palabras1, palabras2)
+    else println("\nNo se encontraron coincidencias")
   }
 }

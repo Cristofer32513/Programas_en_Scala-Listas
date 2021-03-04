@@ -15,9 +15,7 @@ object Ejercicio3 {
 
   def palabraAEliminar() : String = {
     println("\n¿Que palabra quiere eliminar de la lista de palabras?")
-    val palabra = readLine()
-
-    palabra
+    readLine()
   }
 
   def mostrarLista(lista:ListBuffer[String]) : Unit = {
@@ -26,14 +24,22 @@ object Ejercicio3 {
     println(" ]")
   }
 
+  def buscarPalabra(lista:ListBuffer[String], palabra:String) : Int = {
+    var cantidadCoincidencias = 0
+
+    for (e <- lista) if(e.equals(palabra)) cantidadCoincidencias += 1
+
+    cantidadCoincidencias
+  }
+
   def actualizarLista(lista:ListBuffer[String], palabraAEliminar:String) : Unit = {
-    for (e <- lista.indices) {
-      if(lista(e).equals(palabraAEliminar)) {
-        lista.remove(e)
-        actualizarLista(lista, palabraAEliminar)
-        return
+      for (e <- lista.indices) {
+        if(lista(e).equals(palabraAEliminar)) {
+          lista.remove(e)
+          actualizarLista(lista, palabraAEliminar)
+          return
+        }
       }
-    }
 
     println("\nLista modificada")
     mostrarLista(lista)
@@ -42,10 +48,12 @@ object Ejercicio3 {
   def main(args: Array[String]): Unit = {
     val palabras = new ListBuffer[String]()
     llenarLista(palabras)
+    val palabraABorrar = palabraAEliminar()
 
     println("\nLista original")
     mostrarLista(palabras)
 
-    actualizarLista(palabras, palabraAEliminar())
+    if (buscarPalabra(palabras, palabraABorrar) > 0) actualizarLista(palabras, palabraABorrar)
+    else println("\nNo se encontraron coincidencias")
   }
 }
