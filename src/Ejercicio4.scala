@@ -23,7 +23,7 @@ object Ejercicio4 {
       }
     }
 
-    println("\nLista 1 actualizada")
+    println("\nLista 1 actualizada.")
     mostrarListaPalabras(lista1)
   }
 
@@ -37,12 +37,12 @@ object Ejercicio4 {
     val palabras2 = new ListBuffer[String]()
     llenarListaPalabras(palabras2)
 
-    println("\nLista 1 original")
+    println("\nLista 1 original.")
     mostrarListaPalabras(palabras1)
-    println("\nLista de palabras a borrar en la lista 1")
+    println("\nLista de palabras a borrar en la lista 1.")
     mostrarListaPalabras(palabras2)
 
     if (buscarPalabras(palabras1, palabras2) > 0) actualizarLista(palabras1, palabras2)
-    else println("\nNo se encontraron coincidencias")
+    else println("\nNo se encontraron coincidencias.")
   }
 }

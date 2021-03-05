@@ -20,6 +20,7 @@ object Ejercicio8 {
 
   def obtenerCapicuos(lista:ListBuffer[Int]) : ListBuffer[Int] = {
     val listaCapicuos = new ListBuffer[Int]()
+
     for (e <- lista.indices) if(verificarCapicuo(lista(e))) listaCapicuos += lista(e)
 
     listaCapicuos
@@ -29,13 +30,13 @@ object Ejercicio8 {
     val numeros = new ListBuffer[Int]()
     llenarListaNumeros(numeros)
 
-    println("\nNumeros de la Lista original")
+    println("\nNumeros de la Lista original.")
     mostrarListaNumeros(numeros)
     val capicuos = obtenerCapicuos(numeros)
 
     if(capicuos.isEmpty) println("\nNo se encontraron capicuos.")
     else {
-      println("\nNumeros de la lista de capicuos")
+      println("\nNumeros de la lista de capicuos.")
       mostrarListaNumeros(capicuos)
     }
   }

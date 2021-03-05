@@ -1,5 +1,4 @@
 import scala.collection.mutable.ListBuffer
-import scala.io.StdIn.{readInt, readLine}
 import MetodosGenerales._
 
 object Ejercicio7 {
@@ -20,13 +19,13 @@ object Ejercicio7 {
     val palabras = new ListBuffer[String]()
     llenarListaPalabras(palabras)
 
-    println("\nPalabras de la Lista original")
+    println("\nPalabras de la Lista original.")
     mostrarListaPalabras(palabras)
     val palindromas = obtenerPalindromas(palabras)
 
     if(palindromas.isEmpty) println("\nNo se encontraron palindromas.")
     else {
-      println("\nPalabras de la lista de palindromas")
+      println("\nPalabras de la lista de palindromas.")
       mostrarListaPalabras(palindromas)
     }
   }

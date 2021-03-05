@@ -65,25 +65,25 @@ object Ejercicio5 {
     llenarListaPalabras(palabras2)
     eliminarRepetidas(palabras2)
 
-    println("\nPalabras de la Lista 1")
+    println("\nPalabras de la Lista 1.")
     mostrarListaPalabras(palabras1)
-    println("\nPalabras de la lista 2")
+    println("\nPalabras de la lista 2.")
     mostrarListaPalabras(palabras2)
 
 
-    println("\nPalabras que estan en ambas listas")
+    println("\nPalabras que estan en ambas listas.")
     val listaAmbas = obtenerPalabrasEnAmbasListas(palabras1, palabras2)
     mostrarListaPalabras(listaAmbas)
 
-    println("\nPalabras en la lista 1 que no estan en la lista 2")
+    println("\nPalabras en la lista 1 que no estan en la lista 2.")
     val listaEnL1 = obtenerPalabrasDeLista1QueNoEstanEnLista2(palabras1, palabras2)
     mostrarListaPalabras(listaEnL1)
 
-    println("\nPalabras en la lista 2 que no estan en la lista 1")
+    println("\nPalabras en la lista 2 que no estan en la lista 1.")
     val listaEnL2 = obtenerPalabrasDeLista2QueNoEstanEnLista1(palabras1, palabras2)
     mostrarListaPalabras(listaEnL2)
 
-    println("\nUnion de las dos listas anteriores")
+    println("\nUnion de las dos listas anteriores.")
     mostrarListaPalabras(listaEnL1 ++ listaEnL2)
   }
 }

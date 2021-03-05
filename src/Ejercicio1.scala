@@ -15,7 +15,7 @@ object Ejercicio1 {
     val palabras = new ListBuffer[String]()
     llenarListaPalabras(palabras)
 
-    println("\nLista de palabras")
+    println("\nLista de palabras.")
     mostrarListaPalabras(palabras)
 
     println("\nRESULTADO: Se encontraron " + buscarPalabra(palabras, palabraA("\n¿Que palabra quiere buscar en la lista de palabras?")) + " coincidencias en la lista.")

@@ -13,7 +13,7 @@ object Ejercicio3 {
         }
       }
 
-    println("\nLista modificada")
+    println("\nLista modificada.")
     mostrarListaPalabras(lista)
   }
 
@@ -22,10 +22,10 @@ object Ejercicio3 {
     llenarListaPalabras(palabras)
     val palabraABorrar = palabraA("\n¿Que palabra quiere eliminar de la lista de palabras?")
 
-    println("\nLista original")
+    println("\nLista original.")
     mostrarListaPalabras(palabras)
 
     if (buscarPalabra(palabras, palabraABorrar) > 0) actualizarLista(palabras, palabraABorrar)
-    else println("\nNo se encontraron coincidencias")
+    else println("\nNo se encontraron coincidencias.")
   }
 }
